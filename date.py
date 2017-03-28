@@ -1,7 +1,14 @@
 import math
 import datetime
-from time import gmtime, strftime
+from datetime import date
+import time
 
+#this method will take any input with format string dd/mm/yyyy
+#and convert it into a date format
+def convert_date_to_timestamp(date_to_convert):
+    convert = time.mktime(datetime.datetime.strptime(date_to_convert, "%d/%m/%Y").timetuple())
+    print(convert)
+    return convert
 #this method will convert any given date in seconds
 #into (dd/mm/aaaa)
 def convert_second_to_date(second, datePattern):
