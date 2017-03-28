@@ -5,9 +5,11 @@ from time import gmtime, strftime
 #this method will convert any given date in seconds
 #into (dd/mm/aaaa)
 def convert_second_to_date(second, datePattern):
-    format_date = strftime("%b/%d/%Y", gmtime(float(second)))
+    format_date = strftime("%d/%b/%Y", gmtime(float(second)))
     print(format_date)
     return format_date
+
+convert_second_to_date("793984490", "%d %b %Y")
 
 #this method will convert any given date with the format(mm/dd/aaaa)
 #into 3 variables, mois, anne, jour
