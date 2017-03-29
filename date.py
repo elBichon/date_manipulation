@@ -7,13 +7,11 @@ import time
 #and convert it into a date format
 def convert_date_to_timestamp(date_to_convert):
     convert = time.mktime(datetime.datetime.strptime(date_to_convert, "%d/%m/%Y").timetuple())
-    print(convert)
     return convert
 #this method will convert any given date in seconds
 #into (dd/mm/aaaa)
 def convert_second_to_date(second, datePattern):
-    format_date = strftime("%d/%b/%Y", gmtime(float(second)))
-    print(format_date)
+    format_date = time.strftime("%d/%b/%Y", time.gmtime(float(second)))
     return format_date
 
 convert_second_to_date("793984490", "%d %b %Y")
@@ -22,7 +20,6 @@ convert_second_to_date("793984490", "%d %b %Y")
 #into 3 variables, mois, anne, jour
 def exctract_day_from_date_convert_sec(datetime):
     day = datetime[4:5]
-    print(day)    
     return day
 
 def exctract_month_from_date_convert_sec(datetime):
@@ -51,12 +48,10 @@ def exctract_month_from_date_convert_sec(datetime):
         month_num = 11
     elif month == "Dec":
         month_num = 12
-    print(month_num)    
     return month_num
 
 def exctract_year_from_date_convert_sec(datetime):
     year = datetime[5:6]
-    print(year)    
     return year
 
 #this methods will say for any given month if it is 
@@ -68,14 +63,12 @@ def season_of_date(mois):
        season = "hiver"
     elif mois >= 4 and mois <= 9: 
        season = "ete"
-    print(season)
     return season
 
 #this method will convert any given date with the format(dd/mm/aaaa)
 #into 3 variables, mois, anne, jour
 def exctract_day_from_date(date):
     day = date[0:2]
-    print(day)    
     return day
 
 def exctract_month_from_date(date):
@@ -104,12 +97,10 @@ def exctract_month_from_date(date):
         month_num = 11
     elif month == "Dec":
         month_num = 12
-    print(month_num)    
     return month_num
 
 def exctract_year_from_date(date):
     year = date[6:10]
-    print(year)    
     return year
 
 #this methods will say for any given month if it is 
@@ -121,7 +112,6 @@ def season_of_date(mois):
        season = "hiver"
     elif mois >= 4 and mois <= 9: 
        season = "ete"
-    print(season)
     return season
 
 
@@ -155,8 +145,6 @@ def convert_date_to_day(mois, annee, jour):
         day = "vendredi"
     elif j == 6:
         day = "samedi"
-
-    print(day)
     return day
 
 #this method will convert any given day name (lundi, mardi...)
@@ -168,22 +156,9 @@ def convert_period(day_name):
         period = "week_end"
     else:
         period = "week"
-
-    print(period)
     return period
 
 
 
 #implementation
 
-year = 0
-month_num = 0
-day = "day"
-period = "period"
-format_date = "format_date"
-exctract_day_from_date("12/34/5678")
-#exctract_month_from_date("12/34/5678")
-exctract_year_from_date("12/34/5678")
-#season_of_date(1)
-Aexctract_month_from_date(convert_second_to_date("1390019818", "%b %d %Y"))
-#convert_period(convert_date_to_day(1, 1994, 14))
